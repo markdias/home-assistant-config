@@ -1,0 +1,7 @@
+device_tracker.coral:
+  friendly_name: Coral
+device_tracker.marks_iphone:
+  friendly_name: Mark
+sensor.yr_symbol:
+  entity_picture: //api.met.no/weatherapi/weathericon/1.1/?symbol=46;content_type=image/png
+  friendly_name: Weather

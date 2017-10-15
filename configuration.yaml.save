@@ -1,0 +1,95 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 91
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/London
+  # Customization file
+  customize: !include customize.yaml
+
+# Show links to resources in log and frontend
+#introduction:
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+
+
+http:
+  #  Uncomment this to add a password (recommended!)
+     api_password: !secret api_password
+  #  Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+     base_url: myhome.mdias.co.uk:8123
+  #  server_port: 5190
+     ssl_certificate: !secret ssl_cert
+     ssl_key: !secret ssl_key
+  #   trusted_networks: !secret trusted_networks
+# Checks for available updates
+# Note: This component will send some information about your system to
+# the developers to assist with development of Home Assistant.
+# For more information, please see:
+# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+# Discover some devices automatically
+discovery:
+  ignore:
+    - samsung_tv
+
+ios: 
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+media_player:
+  - platform: cast
+  - platform: sonos
+  - platform: apple_tv
+  - platform: spotify
+    client_id: <e1330d487fbc4592ba1677e462c64e59>
+    client_secret: <53256d1c224749149350d088a0f652c2> 
+
+#Track the sun
+sun:
+
+device_tracker:
+  - platform: ping
+    hosts:
+      Joey: 172.16.7.2
+
+# Weather prediction
+sensor:
+  - platform: yr
+  - platform: london_underground
+    line:
+      - Northern
+  - platform: google_travel_time
+    api_key: AIzaSyAdhFJOWXvYhzNpCrfwrYY253zJNeqKZrI
+    origin: Trondheim, Norway
+    destination: Paris, France
+
+google:*Value_created_from_steps_above*
+  client_secret: 
+
+# Text to speech
+tts:
+  - platform: google
+
+#group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml

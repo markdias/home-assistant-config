@@ -1,0 +1,82 @@
+homeassistant:
+  name: Dias Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: 91
+  unit_system: metric
+  time_zone: Europe/London
+
+#customize: !include customize.yaml
+
+############
+# SETTINGS #
+############
+
+#introduction:
+
+frontend:
+
+config:
+
+updater:
+
+discovery:
+  ignore:
+    - samsung_tv
+
+ios: 
+
+conversation:
+
+input_boolean:
+  toggle_switch:
+   name: Lounge
+
+history:
+
+logbook:
+
+sun:
+
+google:
+  client_id: !secret google_client_id
+  client_secret: !secret google_secret_id
+
+tts:
+  - platform: google
+
+ifttt:
+  key: !secret ifttt_key
+
+#########
+# ZONES #
+#########
+
+zone 1:
+  name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  radius: 500
+  icon: mdi:home
+
+zone 2:
+  name: Mark Work
+  latitude: !secret work_latitude
+  longitude: !secret work_longitude
+  radius: 500
+  icon: mdi:briefcase
+
+############
+# INCLUDES #
+############
+
+
+http: !include http.yaml
+#sensor: !include sensor.yaml
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+media_player: !include media_player.yaml
+device_tracker: !include device_tracker.yaml
+binary_sensor: !include binary_sensor.yaml
+switch: !include switch.yaml

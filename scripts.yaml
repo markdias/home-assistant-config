@@ -1,0 +1,17 @@
+lounge_light_off:
+  alias: Turn off Lounge
+  sequence:
+  - alias: ifttt
+    data:
+      event: lounge_off
+      value1: Hello World
+    service: ifttt.trigger
+lounge_light_on:
+  alias: Turn on Lounge
+  sequence:
+  - alias: ifttt
+    data:
+      event: lounge_on
+      value1: Hello World
+    service: ifttt.trigger
+

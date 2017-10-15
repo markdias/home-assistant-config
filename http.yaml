@@ -1,0 +1,6 @@
+     api_password: !secret api_password
+     base_url: myhome.mdias.co.uk:8123
+  #  server_port: 5190
+     ssl_certificate: !secret ssl_cert
+     ssl_key: !secret ssl_key
+  #  trusted_networks: !secret trusted_networks

@@ -1,0 +1,68 @@
+default_view:
+  view: yes
+  icon: mdi:account
+  entities:  
+    - group.info
+    - group.people
+
+info:
+  name: Info
+  view: no
+  entities:
+    - sensor.northern
+    - sun.sun
+    - sensor.yr_symbol
+
+people:
+  name: Family 
+  view: no 
+  entities:
+    - device_tracker.marks_iphone
+    - sensor.marks_iphone_battery_level
+    - sensor.marks_iphone_battery_state
+    - device_tracker.coral
+    - sensor.corals_iphone_battery_level
+    - sensor.corals_iphone_battery_state
+
+media:
+  view: yes
+  icon: mdi:play-circle
+  entities:
+    - media_player.apple_tv
+    - media_player.bedroom
+    - media_player.lounge
+    - remote.apple_tv
+    - media_player.spotify
+
+device_list:
+  name: Device List
+  icon: mdi:desktop-classic
+  view: yes
+  entities:
+    - group.devices
+
+devices:
+  name: Devices
+  view: no
+  icon: mdi:play-circle
+  entities:
+    - binary_sensor.joey_up
+    - binary_sensor.lwrf_up
+    - binary_sensor.sb_up
+    - binary_sensor.hive_up
+    - binary_sensor.moe_up
+    - binary_sensor.coralpc
+    - binary_sensor.markpc
+
+light_switch:
+  name: Light Switches
+  icon: mdi:lightbulb-on-outline
+  view: yes
+  entities:
+    - group.switches
+
+switches:
+  name: Switches
+  view: no
+  entities:
+   -  switch.lounge_light

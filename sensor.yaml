@@ -1,0 +1,11 @@
+  - platform: yr
+  - platform: london_underground
+y    line:
+      - Northern
+  - platform: google_travel_time
+    api_key: AIzaSyAdhFJOWXvYhzNpCrfwrYY253zJNeqKZrI
+    mode: Transit
+    origin: NW72NJ
+    destination: EC2A1PQ
+  - platform: uber
+    server_token: 'MeFdhAqFIyYh_KkpYCEV9nS8THS7GUvEwRcPZQMO'

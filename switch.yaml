@@ -1,0 +1,10 @@
+ - platform: template
+   switches:
+     lounge_light:
+       value_template: "{{ is_state('input_boolean.toggle_switch', 'on') }}"
+       turn_on:
+        service: script.turn_on
+        entity_id: script.lounge_light_on
+       turn_off:
+        service: script.turn_off
+        entity_id: script.lounge_light_off

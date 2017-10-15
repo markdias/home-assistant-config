@@ -1,0 +1,19 @@
+2017-10-15 00:21:13 ERROR (MainThread) [homeassistant.config] Invalid config for [binary_sensor.template]: invalid template (TemplateSyntaxError: expected token ',', got 'on') for dictionary value @ data['sensors']['hive_up']['value_template']. Got "{{ is_state('binary_sensor.hivehub’, 'on') }}". (See ?, line ?). Please check the docs at https://home-assistant.io/components/binary_sensor.template/
+2017-10-15 00:21:13 ERROR (MainThread) [homeassistant.config] Invalid config for [binary_sensor.template]: [Moe_up] is an invalid option for [binary_sensor.template]. Check: binary_sensor.template->sensors->Moe_up. (See ?, line ?). Please check the docs at https://home-assistant.io/components/binary_sensor.template/
+2017-10-15 00:21:13 ERROR (MainThread) [homeassistant.config] Invalid config for [binary_sensor.template]: invalid template (TemplateSyntaxError: expected token ',', got 'on') for dictionary value @ data['sensors']['coralpc_up']['value_template']. Got "{{ is_state('binary_sensor.coralpc’, 'on') }}". (See ?, line ?). Please check the docs at https://home-assistant.io/components/binary_sensor.template/
+2017-10-15 00:21:13 ERROR (MainThread) [homeassistant.config] Invalid config for [binary_sensor.template]: invalid template (TemplateSyntaxError: expected token ',', got 'on') for dictionary value @ data['sensors']['markpc_up']['value_template']. Got "{{ is_state('binary_sensor.markpc’, 'on') }}". (See ?, line ?). Please check the docs at https://home-assistant.io/components/binary_sensor.template/
+2017-10-15 00:21:23 WARNING (MainThread) [homeassistant.setup] Setup of binary_sensor is taking over 10 seconds.
+2017-10-15 00:21:24 WARNING (MainThread) [homeassistant.components.binary_sensor] Setup of platform ping is taking over 10 seconds.
+2017-10-15 00:21:24 WARNING (MainThread) [homeassistant.setup] Setup of media_player is taking over 10 seconds.
+2017-10-15 00:21:34 WARNING (MainThread) [homeassistant.setup] Setup of tts is taking over 10 seconds.
+2017-10-15 00:21:46 WARNING (MainThread) [homeassistant.components.media_player] Setup of platform cast is taking over 10 seconds.
+2017-10-15 00:22:06 WARNING (Thread-5) [netdisco.ssdp] Found malformed XML at http://172.16.7.25:49153/description1.xml: 
+2017-10-15 00:22:06 WARNING (Thread-5) [netdisco.ssdp] Found malformed XML at http://172.16.7.25:49153/description2.xml: 
+2017-10-15 00:22:06 WARNING (Thread-5) [netdisco.ssdp] Found malformed XML at http://172.16.7.25:49153/description3.xml: 
+2017-10-15 00:22:07 WARNING (Thread-5) [netdisco.ssdp] Found malformed XML at http://172.16.7.25:49153/description5.xml: 
+2017-10-15 00:22:07 WARNING (Thread-5) [netdisco.ssdp] Found malformed XML at http://172.16.7.26:49153/description0.xml: 
+2017-10-15 00:22:07 WARNING (Thread-5) [netdisco.ssdp] Found malformed XML at http://172.16.7.26:49153/description1.xml: 
+2017-10-15 00:22:07 WARNING (Thread-5) [netdisco.ssdp] Found malformed XML at http://172.16.7.6:9080: status=ok
+2017-10-15 00:32:34 WARNING (Thread-5) [netdisco.ssdp] Found malformed XML at http://172.16.7.21:9080: status=ok
+2017-10-15 01:09:24 WARNING (MainThread) [homeassistant.helpers.entity] Update of media_player.lounge is taking over 10 seconds
+2017-10-15 01:09:25 WARNING (MainThread) [homeassistant.components.media_player] Updating sonos media_player took longer than the scheduled update interval 0:00:10

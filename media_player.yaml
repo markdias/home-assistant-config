@@ -1,0 +1,6 @@
+  - platform: cast
+  - platform: sonos
+  - platform: apple_tv
+  - platform: spotify
+    client_id: !secret spotify_client_id
+    client_secret: !secret spotify_secret_id

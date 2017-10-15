@@ -1,0 +1,10 @@
+/py3/*
+/letsencrypt/
+/tts/*
+/deps/*
+.google.token
+.spotify-token-cache
+.uuid
+.ios.conf
+.HA_Version
+known_devices.yaml
