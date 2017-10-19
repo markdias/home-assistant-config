@@ -2,16 +2,57 @@ default_view:
   view: yes
   icon: mdi:account
   entities:  
+    - group.travel
     - group.info
     - group.people
+    - group.internet
+
+travel:
+  name: Travel
+  icon: mdi:bus-double-decker
+  view: yes
+  entities:
+    - group.travelfromhomebus
+    - group.traveltohomebus
+
+travelfromhomebus:
+  view: no
+  name: Travel to Mill Hill East
+  entities:
+    - sensor.next_bus_to_turnpike_la_stn
+    - sensor.next_bus_direction_h
+    - sensor.next_bus_estimated_h
+    - sensor.next_bus_route_h
+    - sensor.next_bus_scheduled_h
+
+traveltohomebus:
+  view: no
+  name: Travel from  Mill Hill East
+  entities:
+    - sensor.next_bus_to_edgware
+    - sensor.next_bus_direction_m
+    - sensor.next_bus_estimated_m
+    - sensor.next_bus_route_m
+    - sensor.next_bus_scheduled_m
 
 info:
   name: Info
   view: no
   entities:
     - sensor.northern
+    - sensor.to_home
+    - sensor.to_work
     - sun.sun
     - sensor.yr_symbol
+    - updater.updater
+
+internet:
+  name: Internet
+  view: no
+  entities:
+   - sensor.speedtest_ping
+   - sensor.speedtest_download
+   - sensor.speedtest_upload
 
 people:
   name: Family 
@@ -33,7 +74,7 @@ media:
     - media_player.lounge
     - remote.apple_tv
     - media_player.spotify
-
+    
 device_list:
   name: Device List
   icon: mdi:desktop-classic
@@ -46,23 +87,55 @@ devices:
   view: no
   icon: mdi:play-circle
   entities:
-    - binary_sensor.joey_up
-    - binary_sensor.lwrf_up
-    - binary_sensor.sb_up
-    - binary_sensor.hive_up
-    - binary_sensor.moe_up
-    - binary_sensor.coralpc
-    - binary_sensor.markpc
-
+   - device_tracker.homeassistant
+   - device_tracker.joey
+   - device_tracker.lenovopc
+   - device_tracker.lightwavehub
+   - device_tracker.lwrf
+   - device_tracker.marks_ipad
+   - device_tracker.marks_iphone
+   - device_tracker.marksapplewatch
+   - device_tracker.marksipad
+   - device_tracker.marksiphone
+   - device_tracker.marksmbp
+   - device_tracker.moe
+   - device_tracker.myhivehub
+   - device_tracker.skybooster2
+   - device_tracker.smartthingshub
+   - device_tracker.sonosbridge
+   - device_tracker.sonoszp
+ 
 light_switch:
   name: Light Switches
-  icon: mdi:lightbulb-on-outline
+  icon: mdi:home
   view: yes
   entities:
-    - group.switches
+   - group.switches
+   - group.heating
+   - group.heatinginfo
 
 switches:
-  name: Switches
+  name: Light Switches
   view: no
   entities:
-   -  switch.lounge_light
+   - input_boolean.bedroom_switch
+   - input_boolean.bathroom_switch
+   - input_boolean.lounge_switch
+
+heating:
+  name: Heating Control
+  view: no
+  entities:
+   - climate.hive_heating
+   - script.heating_boost
+
+heatinginfo:
+  name: Heating Info
+  view: no
+  entities:
+   - sensor.hive_current_temperature
+   - sensor.hive_heating_boost
+   - sensor.hive_heating_mode
+   - sensor.hive_heating_state
+   - sensor.hive_target_temperature
+   - sensor.hive_thermostat_battery_level

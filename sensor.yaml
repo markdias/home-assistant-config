@@ -1,11 +1,96 @@
   - platform: yr
+
+#############
+#Underground#
+#############
   - platform: london_underground
-y    line:
+    line:
       - Northern
+
+###############
+#Google Travel#
+###############
   - platform: google_travel_time
-    api_key: AIzaSyAdhFJOWXvYhzNpCrfwrYY253zJNeqKZrI
-    mode: Transit
-    origin: NW72NJ
-    destination: EC2A1PQ
+    name: To Work
+    api_key: !secret google_travel_api
+    origin: device_tracker.marks_iphone
+    destination: zone.mark_work
+    options:
+      mode: transit
+  - platform: google_travel_time
+    name: To Home
+    api_key: !secret google_travel_api
+    origin: device_tracker.marks_iphone 
+    destination: zone.home
+    options:
+      mode: transit
+
+######
+#Uber#
+######          
   - platform: uber
-    server_token: 'MeFdhAqFIyYh_KkpYCEV9nS8THS7GUvEwRcPZQMO'
+    server_token: !secret uber_api
+
+##############
+#Open Weather#
+##############
+  - platform: openweathermap
+    api_key: !secret openweather_api
+    monitored_conditions:
+      - weather
+
+############
+#Speed Test#
+############
+  - platform: speedtest
+    minute:
+      - 0
+      - 15
+      - 30
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+
+##############
+#UK Transport#
+##############
+  - platform: uk_transport
+    app_id: !secret transport_api
+    app_key: !secret transport_key
+    queries:
+      - mode: bus  
+        origin: 490005595E
+        destination: Turnpike La Stn
+      - mode: bus
+        origin: 490011892N
+        destination: Edgware
+  - platform: template
+    sensors:
+      next_bus_route_h:
+       friendly_name: 'Next bus route'
+       value_template: '{{states.sensor.next_bus_to_turnpike_la_stn.attributes.next_buses[0].route}}'
+      next_bus_direction_h:
+       friendly_name: 'Next bus direction'
+       value_template: '{{states.sensor.next_bus_to_turnpike_la_stn.attributes.next_buses[0].direction}}'
+      next_bus_scheduled_h:
+       friendly_name: 'Next bus scheduled'
+       value_template: '{{states.sensor.next_bus_to_turnpike_la_stn.attributes.next_buses[0].scheduled}}'
+      next_bus_estimated_h:
+       friendly_name: 'Next bus estimated'
+       value_template: '{{states.sensor.next_bus_to_turnpike_la_stn.attributes.next_buses[0].estimated}}'
+      next_bus_route_m:
+       friendly_name: 'Next bus route:'
+       value_template: '{{states.sensor.next_bus_to_edgware.attributes.next_buses[0].route}}'
+      next_bus_direction_m:
+       friendly_name: 'Next bus direction:'
+       value_template: '{{states.sensor.next_bus_to_edgware.attributes.next_buses[0].direction}}'
+      next_bus_scheduled_m:
+       friendly_name: 'Next bus scheduled'
+       value_template: '{{states.sensor.next_bus_to_edgware.attributes.next_buses[0].scheduled}}'
+      next_bus_estimated_m:
+       friendly_name: 'Next bus estimated'
+       value_template: '{{states.sensor.next_bus_to_edgware.attributes.next_buses[0].estimated}}'
+      calendar_item:
+       friendly_name: 'Calendar'
+       value_template: '{{states.calendar.manchester_united_matches.attributes.desription}}'

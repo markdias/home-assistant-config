@@ -1,69 +1,64 @@
-  - platform: ping
-    host: 172.16.7.74
-    name: lwrf
-  - platform: ping
-    host: 172.16.7.2
-    name: joey
-  - platform: ping
-    host: 172.16.7.57
-    name: sky_booster
-  - platform: ping
-    host: 172.16.7.27
-    name: hivehub
-  - platform: ping
-    host: 172.16.7.24
-    name: moe
-  - platform: ping
-    host: 172.16.7.14
-    name: coralpc
-  - platform: ping
-    host: 172.16.7.14
-    name: coralpc
-  - platform: ping
-    host: 172.16.7.40
-    name: markpc
+#  - platform: ping
+#    host: 172.16.7.74
+#    name: lwrf
+#  - platform: ping
+#    host: 172.16.7.2
+#    name: joey
+#  - platform: ping
+#    host: 172.16.7.57
+#    name: sky_booster
+#  - platform: ping
+#    host: 172.16.7.27
+#    name: hivehub
+#  - platform: ping
+#    host: 172.16.7.24
+#    name: moe
+#  - platform: ping
+#    host: 172.16.7.14
+#    name: coralpc
+#  - platform: ping
+#    host: 172.16.7.40
+#    name: markpc
     
-  - platform: template
-    sensors:
-      joey_up:
-        friendly_name: "Joey"
-        value_template: >-
-          {{ is_state('binary_sensor.joey', 'on') }}
-  - platform: template
-    sensors:
-      lwrf_up:
-        friendly_name: "Lightwave Server"
-        value_template: >-
-          {{ is_state('binary_sensor.lwrf', 'on') }}
-  - platform: template
-    sensors:
-      sb_up:
-        friendly_name: "Sky Booster"
-        value_template: >-
-          {{ is_state('binary_sensor.sky_booster', 'on') }}
-  - platform: template
-    sensors:
-      hive_up:
-        friendly_name: “Hive Hub”
-        value_template: >-
-          {{ is_state('binary_sensor.hivehub’, 'on') }}
-  - platform: template
-    sensors:
-      Moe_up:
-        friendly_name: “Moe”
-        value_template: >-
-          {{ is_state('binary_sensor.moe’, 'on') }}
-  - platform: template
-    sensors:
-      coralpc_up:
-        friendly_name: “Coral’s Laptop”
-        value_template: >-
-          {{ is_state('binary_sensor.coralpc’, 'on') }}
-  - platform: template
-    sensors:
-      markpc_up:
-        friendly_name: “Mark’s Laptop”
-        value_template: >-
-          {{ is_state('binary_sensor.markpc’, 'on') }}
-
-
+ # - platform: template
+   # sensors:
+     # joey_up:
+    #    friendly_name: "Joey"
+   #     value_template: >-
+  #        {{ is_state('binary_sensor.joey', 'on') }}
+ # - platform: template
+   # sensors:
+     # lwrf_up:
+      #  friendly_name: "Lightwave Server"
+     #   value_template: >-
+    #      {{ is_state('binary_sensor.lwrf', 'on') }}
+#  - platform: template
+   # sensors:
+     # sb_up:
+    #    friendly_name: "Sky Booster"
+   #     value_template: >-
+  #        {{ is_state('binary_sensor.sky_booster', 'on') }}
+ # - platform: template
+   # sensors:
+    #  hive_up:
+   #     friendly_name: “Hive Hub”
+  #      value_template: >-
+ #         {{ is_state('binary_sensor.hivehub’, 'on') }}
+ # - platform: template
+   # sensors:
+     # moe_up:
+    #    friendly_name: “Moe”
+   #     value_template: >-
+  #        {{ is_state('binary_sensor.moe’, 'on') }}
+ # - platform: template
+   # sensors:
+     # coralpc_up:
+    #    friendly_name: “Coral’s Laptop”
+   #     value_template: >-
+  #        {{ is_state('binary_sensor.coralpc’, 'on') }}
+ # - platform: template
+   # sensors:
+   #   markpc_up:
+  #      friendly_name: “Mark’s Laptop”
+ #       value_template: >-
+#          {{ is_state('binary_sensor.markpc’, 'on') }}

@@ -14,4 +14,46 @@ lounge_light_on:
       event: lounge_on
       value1: Hello World
     service: ifttt.trigger
+bedroom_light_off:
+  alias: Turn off Bedroom
+  sequence:
+  - alias: ifttt
+    data:
+      event: bedroom_off
+      value1: Hello World
+    service: ifttt.trigger
+bedroom_light_on:
+  alias: Turn on Bedroom
+  sequence:
+  - alias: ifttt
+    data:
+      event: bedroom_on
+      value1: Hello World
+    service: ifttt.trigger
+bathroom_light_off:
+  alias: Turn off Bathroom
+  sequence:
+  - alias: ifttt
+    data:
+      event: bathroom_off
+      value1: Hello World
+    service: ifttt.trigger
+bathroom_light_on:
+  alias: Turn on Bathroom
+  sequence:
+  - alias: ifttt
+    data:
+      event: bathroom_on
+      value1: Hello World
+    service: ifttt.trigger
+
+heating_boost:
+  alias: Boost Heating
+  sequence:
+  - alias: ifttt
+    data:
+      event: Heating_Boost
+      value1: Hello World
+    service: ifttt.trigger
+
 

@@ -1,1 +1,72 @@
-[]
+- action:
+  - data:
+      event: bedroom_on
+      value1: 'on'
+    service: ifttt.trigger
+  alias: Turn on Switch
+  condition: []
+  id: '1508353234888'
+  trigger:
+  - entity_id: input_boolean.bedroom_switch
+    platform: state
+    to: 'on'
+- action:
+  - data:
+      event: bedroom_off
+      value1: 'off'
+    service: ifttt.trigger
+  alias: Turn off Switch
+  condition: []
+  id: '1508153234888'
+  trigger:
+  - entity_id: input_boolean.bedroom_switch
+    platform: state
+    to: 'off'
+- action:
+  - data:
+      event: lounge_on
+      value1: 'on'
+    service: ifttt.trigger
+  alias: Turn on Switch
+  condition: []
+  id: '1508353234288'
+  trigger:
+  - entity_id: input_boolean.lounge_switch
+    platform: state
+    to: 'on'
+- action:
+  - data:
+      event: lounge_off
+      value1: 'off'
+    service: ifttt.trigger
+  alias: Turn off Switch
+  condition: []
+  id: '1508153234288'
+  trigger:
+  - entity_id: input_boolean.lounge_switch
+    platform: state
+    to: 'off'
+- action:
+  - data:
+      event: bathroom_on
+      value1: 'on'
+    service: ifttt.trigger
+  alias: Turn on Switch
+  condition: []
+  id: '1508353234288'
+  trigger:
+  - entity_id: input_boolean.bathroom_switch
+    platform: state
+    to: 'on'
+- action:
+  - data:
+      event: bathroom_off
+      value1: 'off'
+    service: ifttt.trigger
+  alias: Turn off Switch
+  condition: []
+  id: '1508153234288'
+  trigger:
+  - entity_id: input_boolean.bathroom_switch
+    platform: state
+    to: 'off'

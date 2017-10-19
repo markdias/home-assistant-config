@@ -1,0 +1,14 @@
+  - platform: sky_hub
+    host: 172.16.7.1
+    username: admin
+    password: !secret sky_password
+    interval_seconds: 10
+
+  - platform: owntracks  
+
+#  - platform: template
+#    sensors:
+#     joey_up:
+#      friendly_name: "hhhhh"
+#       value_template: >-
+#        {{ is_state('device_tracker.skybooster2', 'home') }}

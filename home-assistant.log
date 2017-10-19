@@ -1,19 +1,37 @@
-2017-10-15 00:21:13 ERROR (MainThread) [homeassistant.config] Invalid config for [binary_sensor.template]: invalid template (TemplateSyntaxError: expected token ',', got 'on') for dictionary value @ data['sensors']['hive_up']['value_template']. Got "{{ is_state('binary_sensor.hivehub’, 'on') }}". (See ?, line ?). Please check the docs at https://home-assistant.io/components/binary_sensor.template/
-2017-10-15 00:21:13 ERROR (MainThread) [homeassistant.config] Invalid config for [binary_sensor.template]: [Moe_up] is an invalid option for [binary_sensor.template]. Check: binary_sensor.template->sensors->Moe_up. (See ?, line ?). Please check the docs at https://home-assistant.io/components/binary_sensor.template/
-2017-10-15 00:21:13 ERROR (MainThread) [homeassistant.config] Invalid config for [binary_sensor.template]: invalid template (TemplateSyntaxError: expected token ',', got 'on') for dictionary value @ data['sensors']['coralpc_up']['value_template']. Got "{{ is_state('binary_sensor.coralpc’, 'on') }}". (See ?, line ?). Please check the docs at https://home-assistant.io/components/binary_sensor.template/
-2017-10-15 00:21:13 ERROR (MainThread) [homeassistant.config] Invalid config for [binary_sensor.template]: invalid template (TemplateSyntaxError: expected token ',', got 'on') for dictionary value @ data['sensors']['markpc_up']['value_template']. Got "{{ is_state('binary_sensor.markpc’, 'on') }}". (See ?, line ?). Please check the docs at https://home-assistant.io/components/binary_sensor.template/
-2017-10-15 00:21:23 WARNING (MainThread) [homeassistant.setup] Setup of binary_sensor is taking over 10 seconds.
-2017-10-15 00:21:24 WARNING (MainThread) [homeassistant.components.binary_sensor] Setup of platform ping is taking over 10 seconds.
-2017-10-15 00:21:24 WARNING (MainThread) [homeassistant.setup] Setup of media_player is taking over 10 seconds.
-2017-10-15 00:21:34 WARNING (MainThread) [homeassistant.setup] Setup of tts is taking over 10 seconds.
-2017-10-15 00:21:46 WARNING (MainThread) [homeassistant.components.media_player] Setup of platform cast is taking over 10 seconds.
-2017-10-15 00:22:06 WARNING (Thread-5) [netdisco.ssdp] Found malformed XML at http://172.16.7.25:49153/description1.xml: 
-2017-10-15 00:22:06 WARNING (Thread-5) [netdisco.ssdp] Found malformed XML at http://172.16.7.25:49153/description2.xml: 
-2017-10-15 00:22:06 WARNING (Thread-5) [netdisco.ssdp] Found malformed XML at http://172.16.7.25:49153/description3.xml: 
-2017-10-15 00:22:07 WARNING (Thread-5) [netdisco.ssdp] Found malformed XML at http://172.16.7.25:49153/description5.xml: 
-2017-10-15 00:22:07 WARNING (Thread-5) [netdisco.ssdp] Found malformed XML at http://172.16.7.26:49153/description0.xml: 
-2017-10-15 00:22:07 WARNING (Thread-5) [netdisco.ssdp] Found malformed XML at http://172.16.7.26:49153/description1.xml: 
-2017-10-15 00:22:07 WARNING (Thread-5) [netdisco.ssdp] Found malformed XML at http://172.16.7.6:9080: status=ok
-2017-10-15 00:32:34 WARNING (Thread-5) [netdisco.ssdp] Found malformed XML at http://172.16.7.21:9080: status=ok
-2017-10-15 01:09:24 WARNING (MainThread) [homeassistant.helpers.entity] Update of media_player.lounge is taking over 10 seconds
-2017-10-15 01:09:25 WARNING (MainThread) [homeassistant.components.media_player] Updating sonos media_player took longer than the scheduled update interval 0:00:10
+2017-10-19 21:33:17 ERROR (MainThread) [homeassistant.components.sensor] Error while setting up platform uber
+Traceback (most recent call last):
+  File "/home/user/.local/lib/python3.5/site-packages/homeassistant/helpers/entity_component.py", line 164, in _async_setup_platform
+    SLOW_SETUP_MAX_WAIT, loop=self.hass.loop)
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 400, in wait_for
+    return fut.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 293, in result
+    raise self._exception
+  File "/usr/lib/python3.5/concurrent/futures/thread.py", line 55, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/home/user/.local/lib/python3.5/site-packages/homeassistant/components/sensor/uber.py", line 55, in setup_platform
+    session, start_latitude, start_longitude, end_latitude, end_longitude)
+  File "/home/user/.local/lib/python3.5/site-packages/homeassistant/components/sensor/uber.py", line 190, in __init__
+    self.update()
+  File "/home/user/.local/lib/python3.5/site-packages/homeassistant/util/__init__.py", line 306, in wrapper
+    result = method(*args, **kwargs)
+  File "/home/user/.local/lib/python3.5/site-packages/homeassistant/components/sensor/uber.py", line 201, in update
+    self.start_latitude, self.start_longitude)
+  File "/home/user/.homeassistant/deps/lib/python3.5/site-packages/uber_rides/client.py", line 127, in get_products
+    return self._api_call('GET', 'v1.2/products', args=args)
+  File "/home/user/.homeassistant/deps/lib/python3.5/site-packages/uber_rides/client.py", line 107, in _api_call
+    return request.execute()
+  File "/home/user/.homeassistant/deps/lib/python3.5/site-packages/uber_rides/request.py", line 151, in execute
+    prepared_request = self._prepare()
+  File "/home/user/.homeassistant/deps/lib/python3.5/site-packages/uber_rides/request.py", line 111, in _prepare
+    headers = self._build_headers(self.method, self.auth_session)
+  File "/home/user/.homeassistant/deps/lib/python3.5/site-packages/uber_rides/request.py", line 180, in _build_headers
+    raise UberIllegalState(message)
+uber_rides.errors.UberIllegalState: Invalid token_type or token.
+2017-10-19 21:33:23 WARNING (MainThread) [homeassistant.setup] Setup of media_player is taking over 10 seconds.
+2017-10-19 21:33:28 WARNING (MainThread) [homeassistant.components.media_player] Setup of platform cast is taking over 10 seconds.
+2017-10-19 21:33:47 WARNING (Thread-4) [netdisco.ssdp] Found malformed XML at http://172.16.7.25:49153/description1.xml: 
+2017-10-19 21:33:47 WARNING (Thread-4) [netdisco.ssdp] Found malformed XML at http://172.16.7.25:49153/description2.xml: 
+2017-10-19 21:33:47 WARNING (Thread-4) [netdisco.ssdp] Found malformed XML at http://172.16.7.25:49153/description3.xml: 
+2017-10-19 21:33:47 WARNING (Thread-4) [netdisco.ssdp] Found malformed XML at http://172.16.7.25:49153/description5.xml: 
+2017-10-19 21:33:47 WARNING (Thread-4) [netdisco.ssdp] Found malformed XML at http://172.16.7.26:49153/description0.xml: 
+2017-10-19 21:33:47 WARNING (Thread-4) [netdisco.ssdp] Found malformed XML at http://172.16.7.26:49153/description1.xml: 

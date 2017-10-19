@@ -20,17 +20,45 @@ config:
 
 updater:
 
+feedreader:
+  urls: http://freshseries.net/rsslink/oHCMI9.html
+
 discovery:
   ignore:
     - samsung_tv
 
-ios: 
-
-conversation:
+hive:
+  username: mark@mdias.co.uk
+  password: !secret hive_password
 
 input_boolean:
-  toggle_switch:
-   name: Lounge
+  bedroom_switch:
+    name: Bedroom Light Switch
+    icon: mdi:hotel
+    initial: off
+  bathroom_switch:
+    name: Bathroom Light Switch
+    icon: mdi:water-pump
+    initial: off
+  lounge_switch:
+    name: Lounge Light Switch
+    icon: mdi:sofa
+    initial: off
+ios: 
+
+mqtt:
+  broker: m11.cloudmqtt.com
+  port: 13290
+  username: ha
+  password: !secret mqtt_password
+
+panel_iframe:
+  mdiindex:
+    title: MDI Icon Index
+    icon: mdi:vector-square
+    url: https://cdn.rawgit.com/james-fry/home-assistant-mdi/efd95d7a/home-assistant-mdi.html
+
+conversation:
 
 history:
 
@@ -72,7 +100,7 @@ zone 2:
 
 
 http: !include http.yaml
-#sensor: !include sensor.yaml
+sensor: !include sensor.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
